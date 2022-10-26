@@ -80,8 +80,6 @@ let resolution = 10
               }
             }
           }
-        
-        ellipse(touches[i].x, touches[i].y, 50, 50);
       }
 
       }
