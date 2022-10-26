@@ -66,6 +66,24 @@ let resolution = 10
             }     
           }
         }
+        for (var i = 0; i < touches.length; i++) { 
+          for(let i = 0; i<cols; i++){
+            for(let j = 0; j<rows; j++){
+              // if(( mouseY > (rows * (j-1)) && mouseY < rows * j) && ( mouseX > (cols * (i-1)) && mouseX < cols * i)){
+                if( touches[i].y > (resolution * (j-1)) && touches[i].y< resolution * j){
+                  if(grid[i][j]==0){
+                    grid[i][j]=1
+                  }
+                  else{
+                    grid[i][j]=0
+                  }
+              }
+            }
+          }
+        
+        ellipse(touches[i].x, touches[i].y, 50, 50);
+      }
+
       }
    
 
@@ -113,23 +131,7 @@ let resolution = 10
       //return false;
     }
 
-    for (var i = 0; i < touches.length; i++) { 
-        for(let i = 0; i<cols; i++){
-          for(let j = 0; j<rows; j++){
-            // if(( mouseY > (rows * (j-1)) && mouseY < rows * j) && ( mouseX > (cols * (i-1)) && mouseX < cols * i)){
-              if( touches[i].y > (resolution * (j-1)) && touches[i].y< resolution * j){
-                if(grid[i][j]==0){
-                  grid[i][j]=1
-                }
-                else{
-                  grid[i][j]=0
-                }
-            }
-          }
-        }
-      
-      ellipse(touches[i].x, touches[i].y, 50, 50);
-    }
+ 
 
    
 
